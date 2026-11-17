@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Reflection | Light in the Web</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-blue: #1e3d59;
+    --dark-navy: #172a3a;
+    --accent-gold: #ffc107;
+    --bg-light: #f4f7f6;
+    --text-dark: #2c3e50;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-navy));
+    padding: 20px 3.2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.hero {
+    background: linear-gradient(135deg, #234763, #172a3a);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.hero p {
+    color: var(--accent-gold);
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+main {
+    max-width: 1100px;
+    margin: 42px auto;
+    padding: 0 20px;
+}
+
+.content-card {
+    background: white;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    margin-bottom: 28px;
+}
+
+.content-card h2 {
+    color: var(--primary-blue);
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+    border-bottom: 3px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content-card p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.login-box {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--accent-gold);
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--primary-blue);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30,61,89,0.15);
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 13px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: var(--accent-gold);
+    color: var(--dark-navy);
+}
+
+#message {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+footer {
+    background: var(--dark-navy);
+    color: #94a3b8;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .content-card {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        Una ang Ginoo | Light of the World
+    </div>
+</header>
+
+<section class="hero">
+    <h1>WELCOME!</h1>
+
+    <p>
+        "Let your light shine before others, that they may see your good deeds."
+    </p>
+</section>
+
+<main>
+
+    <section class="content-card">
+
+        <h2>User Login</h2>
+
+        <p>
+            Welcome! Please enter your account information
+            to access your personal reflection page.
+        </p>
+
+        <div class="login-box">
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="username">Username / Email</label>
+                    <input
+                        type="email"
+                        id="username"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    Login
+                </button>
+
+                <p id="message"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        &copy; 2026 Light in the Web Project |
+        Tangub City Global College
+    </p>
+</footer>
+
+<script>
+
+const correctEmail = "lucasdave926@gmail.com";
+const correctPassword = "lucas926";
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    if (username === correctEmail && password === correctPassword) {
+
+        message.style.color = "green";
+        message.textContent = "Login successful! Welcome!";
+
+        alert("Login Successful! Welcome to Light in the Web!");
+
+        const proceed = confirm("Would you like to proceed to the next page?");
+
+        if (proceed) {
+            window.location.href = "./page2.html";
+        }
+
+    } else {
+
+        message.style.color = "red";
+        message.textContent = "Incorrect email or password. Please try again.";
+
+        alert("Invalid Login! Please check your email and password.");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

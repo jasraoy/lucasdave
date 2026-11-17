@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* ==========================================================================
+   Project: Light in the Web - A Value-Centered Webpage Design
+   File: style.css
+   ========================================================================== */
+
+/* --- 1. Global Reset & Theme Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-blue: #1e3d59;
+    --dark-navy: #172a3a;
+    --accent-gold: #ffc107;
+    --bg-light: #f4f7f6;
+    --text-dark: #2c3e50;
+    --text-muted: #64748b;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* --- 2. Header & Sticky Navigation Bar --- */
+header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-navy));
+    color: #ffffff;
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #e0e6ed;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    background-color: var(--accent-gold);
+    color: var(--dark-navy);
+}
+
+/* --- 3. Hero Header Banner --- */
+.hero {
+    background: linear-gradient(rgba(30, 61, 89, 0.88), rgba(23, 42, 58, 0.88)), #2b5876;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* --- 4. Main Container & Card Layouts --- */
+main {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.content-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.content-card h2 {
+    color: var(--primary-blue);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.content-card p {
+    margin-bottom: 15px;
+    font-size: 1.02rem;
+    color: var(--text-dark);
+}
+
+/* --- 5. Content Grid (2 Columns) --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-item {
+    background: #f8fafc;
+    border-left: 4px solid var(--primary-blue);
+    padding: 20px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-item h3 {
+    color: var(--primary-blue);
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.card-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* --- 6. Forms & Input Styling --- */
+.login-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--accent-gold);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30, 61, 89, 0.15);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-gold);
+    color: var(--dark-navy);
+}
+
+/* --- 7. References Section Styling --- */
+.content-card ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.content-card ul li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.content-card ul li strong {
+    color: var(--primary-blue);
+}
+
+/* --- 8. Footer --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--dark-navy);
+    color: #94a3b8;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational & Digital Ethics - Light in the Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">Una ang Ginoo | Light of the World</div>
+        <nav>
+            <ul>
+                <li><a href="REFLECTION.html">Reflection</a></li>
+                <li><a href="COMMUNITY SERVICE.html">Community</a></li>
+                <li><a href="PORTFOLIO.html">Portfolio</a></li>
+                <li><a href="EDUCATIONAL.html" class="active">Educational</a></li>
+                <li><a href="INTEGRATION.html">Integration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <div class="hero">
+        <h1>Educational & Digital Ethics</h1>
+        <p>"Teaching moral and ethical digital practices for responsible citizenship online."</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Digital Ethics Guidelines Section -->
+        <section class="content-card">
+            <h2>Pillars of Ethical Digital Practices</h2>
+            <p>As digital citizens guided by the principles of <strong>"Una ang Ginoo" (God First)</strong> and being a <strong>"Light of the World"</strong>, our online actions should reflect integrity, empathy, and respect. Here are core guidelines for moral digital creation and interaction.</p>
+
+            <div class="grid-2">
+                <div class="card-item">
+                    <h3>1. Online Kindness & Respect</h3>
+                    <p>Actively combat cyberbullying by choosing positive, encouraging words. Treat online peers with the same dignity and respect you show offline.</p>
+                </div>
+                <div class="card-item">
+                    <h3>2. Honesty in Digital Creation</h3>
+                    <p>Practice academic and creative honesty. Always give proper credit to original creators, authors, and sources when sharing or building content.</p>
+                </div>
+                <div class="card-item">
+                    <h3>3. Truth Over Misinformation</h3>
+                    <p>Verify information before sharing news or posts online. Uphold truthfulness to prevent the spread of deceptive or unverified content.</p>
+                </div>
+                <div class="card-item">
+                    <h3>4. Privacy & Responsibility</h3>
+                    <p>Safeguard personal data, respect the digital boundaries of others, and use your online voice to uplift rather than divide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Digital Etiquette Checklist Section -->
+        <section class="content-card">
+            <h2>Netizen's Daily Pledge</h2>
+            <p>Before posting, commenting, or sharing content on the web, ask yourself these three guiding questions.</p>
+            
+            <ul style="margin-left: 20px; font-size: 1rem; line-height: 1.8;">
+                <li><strong>Is it true?</strong> Does this content pass accuracy and fact-checking standards?</li>
+                <li><strong>Is it helpful?</strong> Does this post contribute positively to the digital community?</li>
+                <li><strong>Is it kind?</strong> Does this reflect moral responsibility and respect for others?</li>
+            </ul>
+        </section>
+
+        <!-- References & Citations Section -->
+        <section class="content-card">
+            <h2>References & Foundational Sources</h2>
+            <p>The concepts, themes, and ethical standards implemented on this page are grounded in the following guidelines.</p>
+
+            <ul style="margin-left: 20px; font-size: 0.95rem; line-height: 1.8;">
+                <li><strong>Project Framework:</strong> "Project: Light in the Web: A Value-Centered Webpage Design" – Multi-Section Web Design Guidelines.</li>
+                <li><strong>Core Faith Theme:</strong> <em>"Una ang Ginoo"</em> (God First) & <em>"Light of the World"</em> (Matthew 5:14-16) – Values-Centered Digital Expression.</li>
+                <li><strong>Digital Citizenship Standard:</strong> Ethical Practices for Online Conduct, Respectful Communication, and Digital Responsibility.</li>
+                <li><strong>Technical Specifications:</strong> HTML5 & CSS3 Structural Layout Standards built via Visual Studio Code.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Page Footer -->
+    <footer>
+        <p>&copy; 2026 Light in the Web Project. Designed with Purpose.</p>
+    </footer>
+    <script src="const passwordInput = document.js"></script>
+</body>
+</html>
